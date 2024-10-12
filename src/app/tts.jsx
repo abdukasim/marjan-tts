@@ -57,7 +57,7 @@ export default function TTS() {
           placeholder="Enter text to convert to speech"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none mb-4"
+          className="w-full p-3 border text-gray-800 border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none mb-4"
         />
         <button
           onClick={generateAudio}
