@@ -5,10 +5,15 @@ export default function TTS() {
   const [text, setText] = useState("");
   const [audioUrl, setAudioUrl] = useState();
   const [loading, setLoading] = useState(false);
-  const audioRef = useRef(new Audio());
+  const audioRef = useRef(null);
 
   useEffect(() => {
-    if (audioUrl) {
+    // Initialize Audio object on the client side
+    audioRef.current = new Audio();
+  }, []);
+
+  useEffect(() => {
+    if (audioUrl && audioRef.current) {
       audioRef.current.src = audioUrl;
       audioRef.current.play();
     }
